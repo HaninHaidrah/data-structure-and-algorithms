@@ -81,14 +81,12 @@ const notInFirstArray = (forbiddenValues, arr) => {
 
   let array = arr;
   let secondArr = forbiddenValues;
-  const filterArray = (array, secondArr) => {
-    const filtered = secondArr.filter((el) => {
-      return array.indexOf(el) === -1;
-    });
+    const filtered = array.filter((x )=>{
+     return secondArr.indexOf(x) === -1
+    } );
     return filtered;
   };
-  return filterArray((array, secondArr));
-};
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6 - Stretch Goal
