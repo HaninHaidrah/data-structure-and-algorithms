@@ -13,6 +13,10 @@ You can assume that neither firstName nor lastName will be blank
 ------------------------------------------------------------------------------------------------ */
 const toLastNames = people => {
   // Solution code here...
+  const firstAndLatName=people.map((el)=>{
+    return `${el.firstName} ${el.lastName}`
+  })
+  return firstAndLatName;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -24,6 +28,11 @@ Write a function named addValues that, given an array of numbers as input, uses 
 
 const addValues = (arr) => {
   // Solution code here...
+ let sum =arr.reduce((accumaltor,el)=>{
+     accumaltor+=el
+     return accumaltor;
+  },0)
+return sum;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -40,6 +49,11 @@ Write a function named addPurchases that, given an array of objects as input, us
 
 const addPurchases = (arr) => {
   // Solution code here...
+  let sum=arr.reduce((accumaltor,el)=>{
+    accumaltor+=el.purchasePrice
+    return accumaltor;
+  },0)
+  return sum;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -52,6 +66,11 @@ Note: You may not use the array's built-in length property.
 
 const countNumberOfElements = (arr) => {
   // Solution code here...
+  let sum =arr.reduce((accumaltor,el)=>{
+    accumaltor+=el
+    return accumaltor
+  },0)
+  return sum.length;
 };
 
 /* ------------------------------------------------------------------------------------------------
