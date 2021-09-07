@@ -77,7 +77,9 @@ const howMuchPencil = (str) => {
   let result = [];
   // Solution code here...
   let newArr=str.map((el)=>{
-    return el.splice('')
+    let i= el.slice('')
+    result.push(i)
+    return newArr;
 
   })
   return result;
