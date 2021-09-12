@@ -18,12 +18,15 @@ Becomes:
 ]
 ------------------------------------------------------------------------------------------------ */
 
-function transformToLis(obj){
-  // Solution code here...
- const newArr= Object.entries(obj)
- console.log(newArr);
-}
 
+function transformToLis(obj) {
+  
+  const { name, age } = obj;
+  console.log(name)
+
+  if (name && age) return [`<li>name: ${name}</li>`, `<li>age: ${age}</li>`];
+  else return [];
+}
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
@@ -72,7 +75,19 @@ For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 
 const divisibleByFiveTwoToThePower = (input) => {
   // Solution code here...
+  return input.map((arr) =>{
+    arr.filter((element)=>{
+      if (typeof element==='number'&& element %5 ===0){
+        return element}
+      })
+      arr.map((element)=>{ Math.pow(2, element)
+      })
+
+
+    })
 };
+
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5 
@@ -138,7 +153,16 @@ let starWarsData = [{
 
 let findMaleAndFemale = (data) => {
   // Solution code here...
-  
+  return data.filter(({gender: findMaleAndFemale})=>{
+    if (findMaleAndFemale==='male'||findMaleAndFemale==='female'){
+      return findMaleAndFemale;
+    }
+
+  })
+  .map(({ name }) => name)
+  .join(" and ");
+
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -149,6 +173,12 @@ Write a function named findShortest that, given the Star Wars data from Challeng
 
 let findShortest = (data) => {
   // Solution code here...
+  const newArrOfShotr= data.reduce((accumelator,{height:shortArr})=>{
+    return shortArr>accumelator.height? shortArr:accumelator
+  })
+  return data.find(({height:shortest})=> newArrOfShotr===shortest).name
+
+  
 };
 
 /* ------------------------------------------------------------------------------------------------
